@@ -1,8 +1,9 @@
-import {PostModel} from '../../../../domain/models/post.model';
+import { PostModel } from "@domain/models/post.model";
 
 type Props = {
   post: PostModel;
 };
+
 export function ItemPost({post, ...rest}: Props) {
   return (
     <div {...rest}>

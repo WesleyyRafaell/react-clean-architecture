@@ -1,14 +1,16 @@
 import {useEffect, useState} from 'react';
 
-import {IPostList} from '@domain/contracts';
+import { IPostList } from '@domain/contracts/post.contracts';
+import { PostModel } from '@domain/models/post.model';
 
-import {ItemPost} from './components';
+import { ItemPost } from './components/item-post';
 
 type Props = {
-  postListUseCase: IPostList;
-};
+  postListUseCase: IPostList
+}
+
 export function Post({postListUseCase}: Props) {
-  const [posts, setPosts] = useState<IPostList.Model>([]);
+  const [posts, setPosts] = useState<PostModel[]>([]);
 
   useEffect(() => {
     async function loadPosts() {
@@ -17,9 +19,9 @@ export function Post({postListUseCase}: Props) {
     }
 
     loadPosts();
-  }, []);
+  }, [postListUseCase]);
 
   return posts.map((post) => (
-    <ItemPost key={post.id} data-testid="post" post={post} />
+    <ItemPost key={post.id} post={post} />
   ));
 }

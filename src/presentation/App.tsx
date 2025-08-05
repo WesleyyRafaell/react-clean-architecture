@@ -1,7 +1,11 @@
-import './App.css';
+import { PostListUseCase } from '@data/useCases/PostListUseCase/post-list-usecase';
+
+import { Post } from './pages';
 
 function App() {
-  return ( <h1>oi</h1> );
+  const postListUseCase = new PostListUseCase();
+
+  return <Post postListUseCase={postListUseCase} />
 }
 
 export default App;
