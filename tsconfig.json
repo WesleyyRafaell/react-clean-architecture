@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
     "baseUrl": ".",
     "paths": {
       "@data/*": ["./src/data/*"],
@@ -27,6 +28,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "@testing-library/jest-dom"],
+  "include": ["src", "@testing-library/jest-dom", "vite.config.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

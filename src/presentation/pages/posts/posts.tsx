@@ -22,6 +22,6 @@ export function Post({postListUseCase}: Props) {
   }, [postListUseCase]);
 
   return posts.map((post) => (
-    <ItemPost key={post.id} post={post} />
+    <ItemPost data-testid="post" key={post.id} post={post} />
   ));
 }
